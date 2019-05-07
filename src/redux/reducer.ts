@@ -1,43 +1,23 @@
 import { createSelector } from 'reselect';
 
 import {
-  ADD_TODO,
-  UPDATE_FILTER,
-  UPDATE_TODO_STATUS,
-  CLEAR_COMPLETED,
-  Actions
+  Actions,
+  AddTodoAction,
+  UpdateTodoAction,
+  UpdateFilterAction,
+  ClearCompletedAction,
 } from './actions';
+
 import { VisibilityFilter } from '../models/visibility-filter';
 import { State } from '../models/state';
 
 export const reducer = (state = new State(), action: Actions): State => {
   switch (action.type) {
-    case ADD_TODO:
-      return {
-        ...state,
-        todos: [...state.todos, action.todo]
-      };
-    case UPDATE_TODO_STATUS:
-      return {
-        ...state,
-        todos: state.todos.map(todo =>
-          todo.id === action.todo.id
-            ? { ...action.todo, complete: action.complete }
-            : todo
-        )
-      };
-    case UPDATE_FILTER:
-      return {
-        ...state,
-        filter: action.filter
-      };
-    case CLEAR_COMPLETED:
-      return {
-        ...state,
-        todos: state.todos.filter(todo => !todo.complete)
-      };
-    default:
-      return state;
+    case AddTodoAction.TYPE: return AddTodoAction.apply(state, action);
+    case UpdateTodoAction.TYPE: return UpdateTodoAction.apply(state, action)
+    case UpdateFilterAction.TYPE: return UpdateFilterAction.apply(state, action);
+    case ClearCompletedAction.TYPE: return ClearCompletedAction.apply(state);
+    default: return state;
   }
 };
 

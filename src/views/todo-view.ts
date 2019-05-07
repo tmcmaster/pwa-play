@@ -1,4 +1,4 @@
-import { html, property } from 'lit-element';
+import { html, property, customElement } from 'lit-element';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-checkbox';
@@ -18,7 +18,8 @@ import {
 } from '../redux/actions';
 import { BaseView } from './base-view';
 
-class TodoView extends connect(store)(BaseView) {
+@customElement('todo-view')
+export class TodoView extends connect(store)(BaseView) {
   @property()
   private todos: Todo[];
   @property()
@@ -26,12 +27,15 @@ class TodoView extends connect(store)(BaseView) {
   @property()
   private task: string;
 
+  // noinspection JSUnusedGlobalSymbols
   stateChanged(state: State) {
     this.todos = getVisibleTodosSelector(state);
     this.filter = state.filter;
   }
 
+  // noinspection JSUnusedGlobalSymbols
   render() {
+    // noinspection CssInvalidPropertyValue,CssInvalidHtmlTagReference
     return html`
       <style>
         todo-view {
@@ -128,17 +132,18 @@ class TodoView extends connect(store)(BaseView) {
     this.task = e.target.value;
   }
 
+  // noinspection JSMethodCanBeStatic
   updateTodoStatus(updatedTodo: Todo, complete: boolean) {
     store.dispatch(new UpdateTodoAction(updatedTodo, complete));
   }
 
+  // noinspection JSMethodCanBeStatic
   filterChanged(e: { detail: { value: VisibilityFilter } }) {
     store.dispatch(new UpdateFilterAction(e.detail.value));
   }
 
+  // noinspection JSMethodCanBeStatic
   clearCompleted() {
     store.dispatch(new ClearCompletedAction());
   }
 }
-
-customElements.define('todo-view', TodoView);
