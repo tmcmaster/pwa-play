@@ -16,6 +16,11 @@ function initRouter() {
       component: 'todo-view'
     },
     {
+      path: '/wired',
+      component: 'wired-todo-view',
+      action: () => import(/* webpackChunkName: "stats" */ './views/wired-todo-view')
+    },
+    {
       path: '/stats',
       component: 'stats-view',
       action: () => import(/* webpackChunkName: "stats" */ './views/stats-view')
@@ -23,8 +28,7 @@ function initRouter() {
     {
       path: '(.*)',
       component: 'not-found-view',
-      action: () =>
-        import(/* webpackChunkName: "not-found-view" */ './views/not-found-view')
+      action: () => import(/* webpackChunkName: "not-found-view" */ './views/not-found-view')
     }
   ]);
 }

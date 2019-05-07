@@ -89,7 +89,7 @@ export class TodoView extends connect(store)(BaseView) {
                   ${todo.task}
                 </vaadin-checkbox>
               </div>
-            `
+           `
           )
         }
       </div>

@@ -40,6 +40,22 @@ export class UpdateTodoAction implements Action {
   }
 }
 
+export class UpdateTodoValueAction implements Action {
+  static readonly TYPE = 'UPDATE_TODO_VALUE';
+  readonly type = UpdateTodoValueAction.TYPE;
+  constructor(public todo: Todo, public task: string) {}
+  public static apply(state: State, action: UpdateTodoValueAction): State {
+    return {
+      ...state,
+      todos: state.todos.map(todo =>
+          todo.id === action.todo.id
+              ? { ...action.todo, task: action.task }
+              : todo
+      )
+    };
+  }
+}
+
 export class UpdateFilterAction implements Action {
   static readonly TYPE = 'UPDATE_FILTER';
   readonly type = UpdateFilterAction.TYPE;
@@ -71,4 +87,5 @@ export type Actions =
   | AddTodoAction
   | UpdateTodoAction
   | UpdateFilterAction
+  | UpdateTodoValueAction
   | ClearCompletedAction;

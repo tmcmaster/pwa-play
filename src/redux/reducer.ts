@@ -4,6 +4,7 @@ import {
   Actions,
   AddTodoAction,
   UpdateTodoAction,
+  UpdateTodoValueAction,
   UpdateFilterAction,
   ClearCompletedAction,
 } from './actions';
@@ -14,7 +15,8 @@ import { State } from '../models/state';
 export const reducer = (state = new State(), action: Actions): State => {
   switch (action.type) {
     case AddTodoAction.TYPE: return AddTodoAction.apply(state, action);
-    case UpdateTodoAction.TYPE: return UpdateTodoAction.apply(state, action)
+    case UpdateTodoAction.TYPE: return UpdateTodoAction.apply(state, action);
+    case UpdateTodoValueAction.TYPE: return UpdateTodoValueAction.apply(state, action);
     case UpdateFilterAction.TYPE: return UpdateFilterAction.apply(state, action);
     case ClearCompletedAction.TYPE: return ClearCompletedAction.apply(state);
     default: return state;
