@@ -8,7 +8,8 @@
     "webpack-dev-server": "webpack-dev-server --history-api-fallback",
     "prod": "npm run webpack -- --env.mode production --env.presets serviceworker",
     "dev": "npm run webpack-dev-server -- --env.mode development",
-    "dev:sw": "npm run webpack-dev-server -- --env.mode development  --env.presets serviceworker"
+    "dev:sw": "npm run webpack-dev-server -- --env.mode development  --env.presets serviceworker",
+    "wired-elements": "rsync -a ../wired-elements/release/ node_modules/wired-elements/"
   },
   "repository": {
     "type": "git",

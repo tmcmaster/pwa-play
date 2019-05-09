@@ -16,11 +16,42 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-title" content="TutorialApp" />
+
+    <style>
+      wired-helper {
+        display: inline-block;
+        padding: 5px 0 0 20px;
+        float: right:
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      main {
+        display: inline-block;
+        box-sizing: border-box;
+        flex: auto;
+      }
+    </style>
   </head>
 
   <body>
     <header><h1>Todo app</h1></header>
-    <nav><a href="/">Todos</a> <a href="/stats">Stats</a></nav>
+    <nav>
+      <a href="/">Todos</a>
+      <a href="/wired">Wired</a>
+      <a href="/stats">Stats</a>
+      <wired-helper debug="true"></wired-helper>
+    </nav>
 
     <main></main>
     <script src="./vendor/webcomponents-loader.js"></script>
