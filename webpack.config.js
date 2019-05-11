@@ -58,7 +58,8 @@ module.exports = ({ mode, presets }) => {
     {
       mode,
       output: {
-        filename: '[name].[chunkhash:8].js'
+        filename: '[name].[chunkhash:8].js',
+        publicPath: "/pwa-play/"
       },
       module: {
         rules: [

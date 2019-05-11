@@ -6,8 +6,14 @@ You can find the text and video tutorials here:
 TODO add link
 
 
-## run
+## run in dev environment
 
 ```bash
 npm run dev
+```
+
+## build for prod
+
+```bash
+npm run prod
 ```

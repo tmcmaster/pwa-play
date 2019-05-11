@@ -12,16 +12,20 @@ function initRouter() {
 
   router.setRoutes([
     {
-      path: '/',
+      path: '/pwa-play/',
       component: 'todo-view'
     },
     {
-      path: '/wired',
+      path: '/pwa-play/todo',
+      component: 'todo-view'
+    },
+    {
+      path: '/pwa-play/wired',
       component: 'wired-todo-view',
       action: () => import(/* webpackChunkName: "stats" */ './views/wired-todo-view')
     },
     {
-      path: '/stats',
+      path: '/pwa-play/stats',
       component: 'stats-view',
       action: () => import(/* webpackChunkName: "stats" */ './views/stats-view')
     },
