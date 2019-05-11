@@ -17,3 +17,9 @@ npm run dev
 ```bash
 npm run prod
 ```
+
+|  |  |
+| --- | --- |
+| Demo | https://tmcmaster.github.io/pwa-play/ |
+| Source | https://github.com/tmcmaster/pwa-play |
+| Issues | https://github.com/tmcmaster/pwa-play#issues |
