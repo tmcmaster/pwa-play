@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{98:function(e,t,i){"use strict";i.r(t),i.d(t,"TodoView",function(){return p});var d=i(13),o=i(27),a=i(41),r=i(33),s=i(43),c=i(23),n=(i(83),i(5)),l=function(e,t,i,d){var o,a=arguments.length,r=a<3?t:null===d?d=Object.getOwnPropertyDescriptor(t,i):d;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(e,t,i,d);else for(var s=e.length-1;s>=0;s--)(o=e[s])&&(r=(a<3?o(r):a>3?o(t,i,r):o(t,i))||r);return a>3&&r&&Object.defineProperty(t,i,r),r};let p=class extends(Object(s.a)(o.a)(a.a)){stateChanged(e){this.todos=Object(r.a)(e),this.filter=e.filter}render(){return d["d"]`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{98:function(e,t,i){"use strict";i.r(t),i.d(t,"TodoView",function(){return p});var d=i(13),o=i(27),a=i(41),r=i(33),s=i(43),n=i(23),l=(i(83),i(5)),c=function(e,t,i,d){var o,a=arguments.length,r=a<3?t:null===d?d=Object.getOwnPropertyDescriptor(t,i):d;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(e,t,i,d);else for(var s=e.length-1;s>=0;s--)(o=e[s])&&(r=(a<3?o(r):a>3?o(t,i,r):o(t,i))||r);return a>3&&r&&Object.defineProperty(t,i,r),r};let p=class extends(Object(s.a)(o.a)(a.a)){stateChanged(e){this.todos=Object(r.a)(e),this.filter=e.filter}render(){return d["d"]`
             <style>
                 wired-todo-view {
                     display: inline-block;
@@ -84,7 +84,7 @@
             <wired-card id="card" mode="stretch">
             <div class="layout">
                 <div class="add">
-                    <wired-input 
+                    <wired-input id="addInput"
                         placeholder="Task"
                         value="${this.task||""}"
                         @change="${this.updateTask}"
@@ -113,7 +113,7 @@
                         selected="${this.filter}"
                         @selected="${this.filterChanged}"
                     >
-                        ${Object.values(c.a).map(e=>d["d"]`
+                        ${Object.values(n.a).map(e=>d["d"]`
                                     <wired-radio name="${e}">${e}</wired-radio>
                                 `)}
                     </wired-radio-group>
@@ -124,7 +124,7 @@
                 </div>
             </wired-card>
            
-        `}filterChanged(e){console.log("Filter Changed: ",e.detail.selected),o.a.dispatch(new n.c(e.detail.selected))}updateTodoValue(e,t){o.a.dispatch(new n.e(e,t))}addTodo(){this.task&&(o.a.dispatch(new n.a(this.task)),this.task="")}shortcutListener(e){"Enter"===e.key&&this.addTodo()}updateTask(e){this.task=e.target.value}updateTodoStatus(e,t){o.a.dispatch(new n.d(e,t))}clearCompleted(){o.a.dispatch(new n.b)}};l([Object(d.e)()],p.prototype,"todos",void 0),l([Object(d.e)()],p.prototype,"filter",void 0),l([Object(d.e)()],p.prototype,"task",void 0),p=l([Object(d.c)("wired-todo-view")],p)},99:function(e,t,i){"use strict";i.r(t);var d=i(13),o=i(43),a=i(27),r=i(33),s=(i(92),i(41));class c extends(Object(o.a)(a.a)(s.a)){constructor(){super(...arguments),this.hasTodos=!1}stateChanged(e){const t=Object(r.c)(e);this.chartConfig=[{name:"Completed",y:t.completed},{name:"Active",y:t.active}],this.hasTodos=e.todos.length>0}render(){return d["d"]`
+        `}filterChanged(e){console.log("Filter Changed: ",e.detail.selected),o.a.dispatch(new l.c(e.detail.selected))}updateTodoValue(e,t){o.a.dispatch(new l.e(e,t))}addTodo(){this.task&&(o.a.dispatch(new l.a(this.task)),this.task="",this.shadowRoot.getElementById("addInput").value="")}shortcutListener(e){"Enter"===e.key&&this.addTodo()}updateTask(e){this.task=e.target.value}updateTodoStatus(e,t){o.a.dispatch(new l.d(e,t))}clearCompleted(){o.a.dispatch(new l.b)}};c([Object(d.e)()],p.prototype,"todos",void 0),c([Object(d.e)()],p.prototype,"filter",void 0),c([Object(d.e)()],p.prototype,"task",void 0),p=c([Object(d.c)("wired-todo-view")],p)},99:function(e,t,i){"use strict";i.r(t);var d=i(13),o=i(43),a=i(27),r=i(33),s=(i(92),i(41));class n extends(Object(o.a)(a.a)(s.a)){constructor(){super(...arguments),this.hasTodos=!1}stateChanged(e){const t=Object(r.c)(e);this.chartConfig=[{name:"Completed",y:t.completed},{name:"Active",y:t.active}],this.hasTodos=e.todos.length>0}render(){return d["d"]`
       <style>
         :host {
           display: block;
@@ -142,4 +142,4 @@
         </vaadin-chart>
       `:d["d"]`
         <p>Nothing to do! 🌴</p>
-      `}}(function(e,t,i,d){var o,a=arguments.length,r=a<3?t:null===d?d=Object.getOwnPropertyDescriptor(t,i):d;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(e,t,i,d);else for(var s=e.length-1;s>=0;s--)(o=e[s])&&(r=(a<3?o(r):a>3?o(t,i,r):o(t,i))||r);a>3&&r&&Object.defineProperty(t,i,r)})([Object(d.e)()],c.prototype,"chartConfig",void 0),customElements.define("stats-view",c)}}]);
+      `}}(function(e,t,i,d){var o,a=arguments.length,r=a<3?t:null===d?d=Object.getOwnPropertyDescriptor(t,i):d;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(e,t,i,d);else for(var s=e.length-1;s>=0;s--)(o=e[s])&&(r=(a<3?o(r):a>3?o(t,i,r):o(t,i))||r);a>3&&r&&Object.defineProperty(t,i,r)})([Object(d.e)()],n.prototype,"chartConfig",void 0),customElements.define("stats-view",n)}}]);
